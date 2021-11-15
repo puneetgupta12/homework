@@ -1,4 +1,4 @@
-package com.gupta;
+package com.gupta.java;
 
 import java.util.*;
 import java.util.stream.Collectors;

@@ -1,4 +1,4 @@
-package com.gupta;
+package com.gupta.java;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -10,11 +10,11 @@ public class MapSorting {
     public static void main(String[] args) {
         List<String> input = Arrays.asList("tom", "max", "min", "mary", "dell", "hanks", "hobbes", "malcolm");
 
-        //Partition it length wise
+        //How many entries are of specific lengths?
         Map<Integer, Long> lengthMap = input.stream()
                 .collect(Collectors.groupingBy(String::length, Collectors.counting()));
 
-        //lengthMap.forEach((k,v) -> System.out.println(k + ":" + v));
+        lengthMap.forEach((k,v) -> System.out.println(k + ":" + v));
 
         //Sort the map
         lengthMap.entrySet().stream()

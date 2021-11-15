@@ -1,4 +1,4 @@
-package com.gupta;
+package com.gupta.java;
 
 import java.util.ArrayList;
 import java.util.Arrays;

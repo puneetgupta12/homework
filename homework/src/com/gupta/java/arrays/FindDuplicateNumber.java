@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.stream.IntStream;
 
 /*
-    How do you find the duplicate number on a given integer array?
+    How do you find the duplicate number in a given integer array?
  */
 public class FindDuplicateNumber {
     public static void main(String[] args) {

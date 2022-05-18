@@ -1,4 +1,4 @@
-package com.gupta.java.arrays;
+package com.gupta.java.personal.arrays;
 
 public class NumberOfDigitsInNumber {
     public static void main(String[] args) {

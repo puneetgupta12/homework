@@ -1,7 +1,5 @@
-package com.gupta.java.arrays;
+package com.gupta.java.personal.arrays;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.stream.IntStream;
 
 /*

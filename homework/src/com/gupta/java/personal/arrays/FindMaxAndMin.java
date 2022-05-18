@@ -1,4 +1,4 @@
-package com.gupta.java.arrays;
+package com.gupta.java.personal.arrays;
 
 /*
     How do you find the largest and smallest number in an unsorted integer array?

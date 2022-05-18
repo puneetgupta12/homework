@@ -1,6 +1,4 @@
-package com.gupta.java.arrays;
-
-import java.util.Arrays;
+package com.gupta.java.personal.arrays;
 
 /*
     Given an unsorted array of integers, find the length of the longest consecutive elements sequence?

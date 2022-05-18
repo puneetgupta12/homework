@@ -1,4 +1,4 @@
-package com.gupta.java.arrays;
+package com.gupta.java.personal.arrays;
 
 import java.util.stream.IntStream;
 

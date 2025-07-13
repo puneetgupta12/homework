@@ -25,5 +25,12 @@ public class MapSorting {
         Map<Integer, List<String>> groupedByMap = input.stream()
                 .collect(Collectors.groupingBy(String::length));
         groupedByMap.forEach((k,v) -> System.out.println(k + ":" + v));
+
+        System.out.println("\nGrouping by length...\n");
+        Map<Integer, List<String>> grouped = input.stream().collect(Collectors.groupingBy(String::length));
+        grouped.forEach((k,v) -> System.out.println(k + ":" + v));
+
+        //In each group, sort alphabetically
+        grouped.entrySet().stream().flatMap(e -> e.getValue().stream()).sorted(Comparator.naturalOrder());
     }
 }

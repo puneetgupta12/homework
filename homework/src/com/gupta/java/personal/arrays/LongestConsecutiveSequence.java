@@ -9,7 +9,7 @@ import java.util.HashSet;
  */
 public class LongestConsecutiveSequence {
     public static void main(String[] args) {
-        int[] input = {100, 4, 200, 1, 3, 2};
+        int[] input = {100, 42, 200, 201, 202, 203, 41, 39, 40};
         //int[] input = {12, -2, 101, 6, 100, -10, 102};
 
         //Arrays.stream(findLongestSequenceNaive(input)).forEach(System.out::println);

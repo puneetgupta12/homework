@@ -3,6 +3,7 @@ package com.gupta.java.java8;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class RoughWork {
     public static void main(String[] args) {
@@ -20,5 +21,13 @@ public class RoughWork {
 
         IntStream joinedArrays = IntStream.concat(Arrays.stream(arr1), Arrays.stream(arr2));
         joinedArrays.forEach(System.out::println);
+
+        String[] arr3 = {"A", "B", "C"};
+        String[] arr4 = {"D", "E"};
+
+        String[] result = Stream.concat(Arrays.stream(arr3), Arrays.stream(arr4))
+                .toArray(String[]::new);
+
+        System.out.println(Arrays.toString(result));
     }
 }

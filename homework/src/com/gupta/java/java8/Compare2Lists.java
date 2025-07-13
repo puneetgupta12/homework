@@ -16,48 +16,63 @@ public class Compare2Lists {
                 new Employee("anna", 55, "ED")
         );
 
+        //Another approach
+        List<Employee> diff = new ArrayList<>();
+        for (int i = 0; i < list1.size(); i++) {
+            for (int j = 0; j < list2.size(); j++) {
+                if (!list1.get(i).equals(list2.get(j))) {
+                    diff.add(list1.get(i));
+                    diff.add(list2.get(j));
+                } else {
+                    break;
+                }
+            }
+        }
+
+        diff.stream().forEach(d -> System.out.println(d.getName()));
+
         //Method 1: Start
-        Set<Employee> list1Lookup = list1.stream().collect(Collectors.toSet());
-
-        Set<Employee> list2Lookup = list2.stream().collect(Collectors.toSet());
-
-        List<Employee> matched = list2.stream()
-                .filter(emp -> list1Lookup.contains(emp)).collect(Collectors.toList());
-
-        List<Employee> unmatched = list2.stream()
-                .filter(emp -> !list1Lookup.contains(emp)).collect(Collectors.toList());
-
-        list1.stream().filter(emp -> !list2Lookup.contains(emp)).
-                collect(Collectors.toCollection(() -> unmatched));
-
-        System.out.println("Matched List: ");
-        matched.forEach(e -> System.out.println(e.getName()));
-
-        System.out.println("Unmatched List: ");
-        unmatched.forEach(e -> System.out.println(e.getName()));
-        //Method 1: End
-
-        //Method 2: Start
-        Map<String, Employee> list1Map = list1.stream()
-                .collect(Collectors.toMap(Employee::getName, Function.identity()));
-
-        Map<String, Employee> list2Map = list2.stream()
-                .collect(Collectors.toMap(Employee::getName, Function.identity()));
-
-        List<Employee> matched2 = list2.stream()
-                .filter(emp -> list1Map.containsKey(emp.getName())).collect(Collectors.toList());
-
-        List<Employee> unmatched2 = list1.stream()
-                .filter(emp -> !list2Map.containsKey(emp.getName())).collect(Collectors.toList());
-
-        list2.stream().filter(emp -> !list1Map.containsKey(emp.getName()))
-                .collect(Collectors.toCollection(() -> unmatched2));
-
-        System.out.println("Matched2 List: ");
-        matched.forEach(e -> System.out.println(e.getName()));
-
-        System.out.println("Unmatched2 List: ");
-        unmatched.forEach(e -> System.out.println(e.getName()));
+//        Set<Employee> list1Lookup = list1.stream().collect(Collectors.toSet());
+//
+//        Set<Employee> list2Lookup = list2.stream().collect(Collectors.toSet());
+//
+//        List<Employee> matched = list2.stream()
+//                .filter(emp -> list1Lookup.contains(emp)).collect(Collectors.toList());
+//
+//        List<Employee> unmatched = list2.stream()
+//                .filter(emp -> !list1Lookup.contains(emp)).collect(Collectors.toList());
+//
+//        list1.stream().filter(emp -> !list2Lookup.contains(emp)).
+//                collect(Collectors.toCollection(() -> unmatched));
+//
+//        System.out.println("Matched List: ");
+//        matched.forEach(e -> System.out.println(e.getName()));
+//
+//        System.out.println("Unmatched List: ");
+//        unmatched.forEach(e -> System.out.println(e.getName()));
+//        //Method 1: End
+//
+//        //Method 2: Start
+//        Map<String, Employee> list1Map = list1.stream()
+//                .collect(Collectors.toMap(Employee::getName, Function.identity()));
+//
+//        Map<String, Employee> list2Map = list2.stream()
+//                .collect(Collectors.toMap(Employee::getName, Function.identity()));
+//
+//        List<Employee> matched2 = list2.stream()
+//                .filter(emp -> list1Map.containsKey(emp.getName())).collect(Collectors.toList());
+//
+//        List<Employee> unmatched2 = list1.stream()
+//                .filter(emp -> !list2Map.containsKey(emp.getName())).collect(Collectors.toList());
+//
+//        list2.stream().filter(emp -> !list1Map.containsKey(emp.getName()))
+//                .collect(Collectors.toCollection(() -> unmatched2));
+//
+//        System.out.println("Matched2 List: ");
+//        matched.forEach(e -> System.out.println(e.getName()));
+//
+//        System.out.println("Unmatched2 List: ");
+//        unmatched.forEach(e -> System.out.println(e.getName()));
         //Method 2: End
     }
 

@@ -2,6 +2,7 @@ package com.gupta.java.java8;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 public class RemoveFromList {
@@ -27,6 +28,18 @@ public class RemoveFromList {
         //Try removeIf for the above - remove if 1st character is not a digit
         transactions.removeIf(tx -> Character.isDigit(tx.getReferenceCode().charAt(0)));
         transactions.stream().map(t -> t.getCustomerName()).forEach(System.out::println);
+
+        //Different method to remove
+        Iterator<Transaction> itr = transactions.iterator();
+
+        while (itr.hasNext()) {
+            Transaction tx = itr.next();
+            if (Character.isDigit(tx.getReferenceCode().charAt(0))) {
+                itr.remove();
+            }
+        }
+
+        transactions.forEach(t -> System.out.println(t.getCustomerName()));
     }
 
     private static class Transaction {
